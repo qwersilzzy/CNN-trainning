@@ -1,0 +1,10 @@
+test file error of state_dict
+
+C:\Users\F-J-Y\degreepro\nsga-net-master\misc\utils
+
+def load(model, model_path):
+    model.load_state_dict(torch.load(model_path), False)
+    # model.load_state_dict(torch.load(model_path))
+
+model errors:
+change the directory

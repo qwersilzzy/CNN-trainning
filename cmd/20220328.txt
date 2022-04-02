@@ -1,0 +1,74 @@
+pip, pip3
+
+conda -->	conda --version
+
+
+python  --> 	python 
+		python --version
+
+PyTorch --> 	pip3 show torch
+		conda list -f pytorch
+
+torchvision-->	conda install pytorch torchvision torchaudio cpuonly -c pytorch
+
+pymoo -->	pip install -U pymoo
+		python -c "from pymoo.util.function_loader import is_compiled;print('Compiled Extensions: ', is_compiled())"
+		
+		conda create -n pymoo -y python==3.9 numpy
+		conda activate pymoo
+		pip install -U pymoo
+
+CUDA -->	import torch
+		torch.cuda.is_available()
+		torch.cuda.get_device_name(0)
+		conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+how can I tell if the PyTorch installed is GPU or non-GPU version:
+-->		print(torch.version.cuda)
+		python -m torch.utils.collect_env
+
+
+
+For using Pytorch with GPU from within an anaconda virtual environment in Windows , You don't need to install CUDA in windows. 
+They are no related. Just  follow the below steps and you should be good . 
+You don't need to install anything in windows, just the usual nvidia gaming drivers are sufficient . 
+
+conda create -n torch-gpu python=3.8
+conda activate torch-gpu   
+conda deactivate 
+conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
+python
+>>> import torch
+>>> torch.cuda.is_available()
+True
+>>> torch.cuda.get_device_name(0)
+'GeForce GTX 1070'
+
+
+20200329
+
+spyder -->	pip install spyder
+		#every environment
+
+pymoo -->	
+		conda create -n pymoo -y python==3.9 numpy
+		conda activate pymoo
+		pip install -U pymoo
+
+Uninstalling Anaconda -->
+Use Windows Explorer to delete the envs and pkgs folders prior to running the uninstall in the root of your installation.
+In the Control Panel, choose Add or Remove Programs or Uninstall a program, 
+and then select Python 3.6 (Anaconda) or your version of Python.
+
+		conda install anaconda-clean
+		anaconda-clean --yes
+		#Remove all Anaconda-related files and directories with a confirmation prompt before deleting each one:
+		
+		anaconda-clean
+		#Remove all Anaconda-related files and directories with a confirmation prompt before deleting each one:
+
+
+		conda env remove -n ENV_NAME
+
+		
+		
